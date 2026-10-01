@@ -3,3 +3,8 @@
 
 // 2)What is subscribe?
 // Answer :Store or Reducer  ke bollam judi state change hoi tmi component ke update kore diyo and ai update kore deuya ke Redux a Subscribe bole and redux a subscribe kora hoi "Selector" diye..
+
+// 3) Onclick a action neuya ke redux a dispatch bole..
+//  Dispatch ar vitore 2 ta jinis thake (1st)Action and (2nd)Payload..
+// Action : Action holo akta object jeita redux ke bole ki kaj korte hobe ..
+// Payload : Payload holo action ar sathe pathano otirikto data ..
