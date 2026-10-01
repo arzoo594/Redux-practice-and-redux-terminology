@@ -1,15 +1,30 @@
+import { useDispatch, useSelector } from "react-redux";
+import { decrement, increment } from "./redux/counter/counterSlice";
+
 const App = () => {
+  const value = useSelector((state) => {
+    return state.counter.value;
+  });
+  const disPatch = useDispatch();
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <div className="bg-white shadow-xl rounded-2xl p-8 text-center w-80">
-        <h1 className="text-2xl font-bold text-gray-800 mb-6">Counter: 0</h1>
+        <h1 className="text-2xl font-bold text-gray-800 mb-6">
+          Counter: {value}
+        </h1>
 
         <div className="flex justify-center gap-3">
-          <button className="bg-green-500 hover:bg-green-600 text-white font-semibold px-5 py-2.5 rounded-lg transition">
+          <button
+            onClick={() => disPatch(increment())}
+            className="bg-green-500 hover:bg-green-600 text-white font-semibold px-5 py-2.5 rounded-lg transition"
+          >
             Increment
           </button>
 
-          <button className="bg-red-500 hover:bg-red-600 text-white font-semibold px-5 py-2.5 rounded-lg transition">
+          <button
+            onClick={() => disPatch(decrement())}
+            className="bg-red-500 hover:bg-red-600 text-white font-semibold px-5 py-2.5 rounded-lg transition"
+          >
             Decrement
           </button>
         </div>
